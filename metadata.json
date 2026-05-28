@@ -1,0 +1,6 @@
+{
+  "name": "Le Yeti de Villard",
+  "description": "WISS Spa - Luxury botanical wellness sanctuary in Victoria Island, Lagos, Nigeria. A bespoke blend of world-class massage therapies, thermal steam rooms, and tropical garden relaxation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
