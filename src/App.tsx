@@ -168,7 +168,7 @@ export default function App() {
   const pendingInquiriesCount = inquiries.filter((i) => i.status === 'pending').length;
 
   return (
-    <div className="text-[#3C3C3B] bg-[#F9F7F2] antialiased selection:bg-[#5A5A40] selection:text-white min-h-screen flex flex-col justify-between font-sans">
+    <div className="text-[#3C3C3B] bg-[#F9F7F2] antialiased selection:bg-[#5A5A40] selection:text-white min-h-screen flex flex-col justify-between font-sans overflow-x-hidden w-full">
       
       {/* Universal transparent scroll header navigation */}
       <Header 

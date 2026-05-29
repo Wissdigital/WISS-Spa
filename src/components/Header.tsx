@@ -33,48 +33,6 @@ export default function Header({ lang, setLang, dict, currentPage, navigateTo, i
 
   return (
     <>
-      {/* Top Bar - Beautiful high-contrast ambient natural tones */}
-      <div className="bg-[#3C3C3B] text-stone-200 py-2.5 border-b border-[#E6E2D3]/15 relative z-50 transition-all">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center text-xs font-semibold tracking-wide">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2 hover:text-white transition-colors">
-              <MapPin className="w-3.5 h-3.5 text-[#D9D2C5]" strokeWidth={2} />
-              {dict.topBar.location}
-            </span>
-            <a href="mailto:booking@wissspa.com" className="flex items-center gap-2 hover:text-white transition-colors">
-              <Mail className="w-3.5 h-3.5 text-[#D9D2C5]" strokeWidth={2} />
-              {dict.topBar.email}
-            </a>
-          </div>
-          <div className="flex items-center gap-5">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#D9D2C5] transition-colors">
-              <Facebook className="w-4 h-4" />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#D9D2C5] transition-colors">
-              <Instagram className="w-4 h-4" />
-            </a>
-
-            {/* Quick Host Portal Switch */}
-            <button 
-              onClick={() => navigateTo(currentPage === 'admin' ? 'home' : 'admin')}
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider transition-all shadow-sm cursor-pointer ${
-                currentPage === 'admin' 
-                  ? 'bg-amber-500 text-[#3C3C3B] scale-105' 
-                  : 'bg-white/10 text-stone-200 hover:bg-white/15'
-              }`}
-            >
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Spa Desk Admin</span>
-              {inquiryCount > 0 && (
-                <span className="bg-red-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[9px] animate-pulse font-sans">
-                  {inquiryCount}
-                </span>
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation with backdrop blur */}
       <header className={`sticky top-0 z-40 transition-all duration-300 border-b ${
         isScrolled 
@@ -136,6 +94,24 @@ export default function Header({ lang, setLang, dict, currentPage, navigateTo, i
 
           {/* Right Action buttons */}
           <div className="flex items-center gap-4">
+
+            {/* Quick Host Portal Switch */}
+            <button 
+              onClick={() => navigateTo(currentPage === 'admin' ? 'home' : 'admin')}
+              className={`hidden lg:flex items-center gap-1.5 px-3 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all shadow-xs cursor-pointer border ${
+                currentPage === 'admin' 
+                  ? 'bg-amber-500 border-amber-500 text-[#3C3C3B] scale-105' 
+                  : 'bg-[#5A5A40]/10 text-[#5A5A40] border-[#5A5A40]/25 hover:bg-[#5A5A40]/15'
+              }`}
+            >
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Spa Desk Admin</span>
+              {inquiryCount > 0 && (
+                <span className="bg-red-500 text-white w-4 h-4 rounded-full flex items-center justify-center text-[9px] animate-pulse font-sans">
+                  {inquiryCount}
+                </span>
+              )}
+            </button>
 
             {/* CTAs */}
             <button
